@@ -7,7 +7,7 @@ import java.io.Serializable;
  *
  * @param <E>
  */
-public interface BaseDao<E extends Serializable> {
+public interface BaseDAO<E extends Serializable> {
 
     void create(E e);
 

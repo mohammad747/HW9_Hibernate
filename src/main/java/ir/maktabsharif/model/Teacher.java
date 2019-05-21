@@ -9,7 +9,8 @@ import java.util.Date;
  *
  * Teacher entity/Table
  */
-@Entity(name = "teachers")
+@Entity
+@Table(name = "teachers")
 public class Teacher implements Serializable {
 
     /**
@@ -19,7 +20,7 @@ public class Teacher implements Serializable {
      */
     @Id
     @Column(name = "id")
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "first_name")

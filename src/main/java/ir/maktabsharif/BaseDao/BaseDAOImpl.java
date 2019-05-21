@@ -6,19 +6,19 @@ import org.hibernate.SessionFactory;
 import java.io.Serializable;
 
 /**
- * Implement BaseDao(CRUD)
+ * Implement BaseDAO(CRUD)
  *
  * @param <E>
  */
-public abstract class BaseDaoImpl<E extends Serializable> implements BaseDao<E> {
+public abstract class BaseDAOImpl<E extends Serializable> implements BaseDAO<E> {
 
-    private final SessionFactory factory;
+    protected final SessionFactory factory;
 
-    protected BaseDaoImpl(SessionFactory factory) {
+    protected BaseDAOImpl(SessionFactory factory) {
         this.factory = factory;
     }
 
-    abstract String getEntityName();
+    protected abstract String getEntityName();
 
     @Override
     public void create(E e) {
