@@ -1,4 +1,9 @@
 package ir.maktabsharif.model.dao;
 
-public interface TeacherDao {
+import ir.maktabsharif.BaseDao.BaseDao;
+import ir.maktabsharif.model.Teacher;
+
+public interface TeacherDao extends BaseDao<Teacher> {
+
+
 }

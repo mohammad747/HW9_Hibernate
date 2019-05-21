@@ -1,6 +1,7 @@
 package ir.maktabsharif.model;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -9,7 +10,7 @@ import java.util.Date;
  * Teacher entity/Table
  */
 @Entity(name = "teachers")
-public class Teacher {
+public class Teacher implements Serializable {
 
     /**
      * Fields or columns
