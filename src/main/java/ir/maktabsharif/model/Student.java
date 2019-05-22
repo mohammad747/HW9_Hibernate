@@ -1,14 +1,16 @@
 package ir.maktabsharif.model;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 /**
  * @author Mohammad hashemi
  *
  * Teacher entity/Table
  */
-@Entity(name = "students")
-public class Student {
+@Entity
+@Table(name = "students")
+public class Student implements Serializable {
 
     /**
      * Fields or columns
@@ -17,7 +19,7 @@ public class Student {
      */
     @Id
     @Column(name = "id")
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "first_name")
