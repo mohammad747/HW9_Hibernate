@@ -29,7 +29,7 @@ public class StudentDAOImpl extends BaseDAOImpl<Student> implements StudentDAO {
 
         Query query = session.createQuery(hql);
 
-        query.setParameter(name,"mohammad");
+        query.setString("name", name);
 
         List studentsByName = query.list();
 

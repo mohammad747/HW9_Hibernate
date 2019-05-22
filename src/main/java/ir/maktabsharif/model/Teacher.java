@@ -2,7 +2,7 @@ package ir.maktabsharif.model;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Date;
+import java.time.LocalDate;
 
 /**
  * @author Mohammad hashemi
@@ -36,7 +36,7 @@ public class Teacher implements Serializable {
     private Double salary;
 
     @Column(name = "birthday")
-    private Date birthday;
+    private LocalDate birthday;
 
     /**
      * Default constructor
@@ -47,14 +47,13 @@ public class Teacher implements Serializable {
 
     /**
      * Constructor
-     *
-     * @param firstName
+     *  @param firstName
      * @param lastName
      * @param teacherCode
      * @param salary
      * @param birthday
      */
-    public Teacher(String firstName, String lastName, Long teacherCode, Double salary, Date birthday) {
+    public Teacher(String firstName, String lastName, Long teacherCode, Double salary, LocalDate birthday) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.teacherCode = teacherCode;
@@ -105,11 +104,11 @@ public class Teacher implements Serializable {
         this.salary = salary;
     }
 
-    public Date getBirthday() {
+    public LocalDate getBirthday() {
         return birthday;
     }
 
-    public void setBirthday(Date birthday) {
+    public void setBirthday(LocalDate birthday) {
         this.birthday = birthday;
     }
 

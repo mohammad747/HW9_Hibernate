@@ -54,7 +54,7 @@ public class TeacherDAOImpl extends BaseDAOImpl<Teacher> implements TeacherDAO {
 
         Session session = factory.openSession();
 
-        Object singleResultMax = session.createQuery("from Teacher t order by t.birthday").setMaxResults(1).getSingleResult();
+        Object singleResultMax = session.createQuery("from Teacher t order by t.birthday asc ").setMaxResults(1).getSingleResult();
         Object singleResultMin = session.createQuery("from Teacher t order by t.birthday desc").setMaxResults(1).getSingleResult();
 
         Teacher eMax = (Teacher) singleResultMax;
