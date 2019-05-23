@@ -7,7 +7,7 @@ import java.io.Serializable;
 
 /**
  * Implement BaseDAO(CRUD)
- *
+ * @author Mohammad hashemi
  * @param <E>
  */
 public abstract class BaseDAOImpl<E extends Serializable> implements BaseDAO<E> {
@@ -20,6 +20,10 @@ public abstract class BaseDAOImpl<E extends Serializable> implements BaseDAO<E> 
 
     protected abstract String getEntityName();
 
+    /**
+     * CREATE
+     * @param e
+     */
     @Override
     public void create(E e) {
         Session session  = factory.openSession();
@@ -33,6 +37,11 @@ public abstract class BaseDAOImpl<E extends Serializable> implements BaseDAO<E> 
         session.close();
     }
 
+    /**
+     * READ
+     * @param id
+     * @return
+     */
     @Override
     public E read(Serializable id) {
 
@@ -49,6 +58,11 @@ public abstract class BaseDAOImpl<E extends Serializable> implements BaseDAO<E> 
         return e;
     }
 
+    /**
+     * UPDATE
+     * @param e
+     * @return
+     */
     @Override
     public E update(E e) {
 
@@ -65,6 +79,10 @@ public abstract class BaseDAOImpl<E extends Serializable> implements BaseDAO<E> 
         return e;
     }
 
+    /**
+     * DELETE
+     * @param id
+     */
     @Override
     public void delete(Serializable id) {
 

@@ -2,8 +2,12 @@ package ir.maktabsharif.model.dao;
 
 import ir.maktabsharif.BaseDao.BaseDAOImpl;
 import ir.maktabsharif.model.Teacher;
+import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Criterion;
+import org.hibernate.criterion.Projection;
+import org.hibernate.criterion.Projections;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -47,6 +51,20 @@ public class TeacherDAOImpl extends BaseDAOImpl<Teacher> implements TeacherDAO {
         session.close();
 
         return maxMin;
+    }
+
+    @Override
+    public List<Teacher> maxAndMinSalaryOfTeachersCriteria() {
+        Session session = factory.openSession();
+
+        Criteria cr = session.createCriteria(Teacher.class);
+
+        cr.setProjection(Projections.max("salary"));
+        cr.setProjection(Projections.min("salary"));
+
+        List result = cr.list();
+
+        return result;
     }
 
     @Override

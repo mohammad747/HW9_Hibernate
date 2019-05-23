@@ -10,6 +10,7 @@ public interface TeacherDAO extends BaseDAO<Teacher> {
     void deleteByTeacherCode(Long teacherCode);
 
     List<Teacher> maxAndMinSalaryOfTeachers();
+    List<Teacher> maxAndMinSalaryOfTeachersCriteria();
 
     List<Teacher> youngestAndOldestTeachers();
 }

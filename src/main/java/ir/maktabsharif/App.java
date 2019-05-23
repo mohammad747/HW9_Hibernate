@@ -56,10 +56,12 @@ public class App
         //teacherDAO.deleteByTeacherCode(111114L);
 
         //System.out.println(teacherDAO.maxAndMinSalaryOfTeachers());
+        System.out.println(teacherDAO.maxAndMinSalaryOfTeachersCriteria());
 
         //System.out.println(teacherDAO.youngestAndOldestTeachers());
 
         //System.out.println(studentDAO.searchStudentsByName("mohammad"));
+        //System.out.println(studentDAO.searchStudentsByNameCriteria("Mehdi"));
 
 
 

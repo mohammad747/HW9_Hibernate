@@ -2,9 +2,13 @@ package ir.maktabsharif.model.dao;
 
 import ir.maktabsharif.BaseDao.BaseDAOImpl;
 import ir.maktabsharif.model.Student;
+import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Criterion;
+import org.hibernate.criterion.LogicalExpression;
+import org.hibernate.criterion.Restrictions;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,10 +37,30 @@ public class StudentDAOImpl extends BaseDAOImpl<Student> implements StudentDAO {
 
         List studentsByName = query.list();
 
-        session.close();
 
         return studentsByName;
 
+    }
 
+    @Override
+    public List<Student> searchStudentsByNameCriteria(String name) {
+
+        Session session = factory.openSession();
+
+        Criteria cr = session.createCriteria(Student.class);
+
+        Criterion firstName = (Criterion) Restrictions.like("firstName", name);
+        Criterion lastName = (Criterion) Restrictions.like("lastName", name);
+
+        LogicalExpression or = Restrictions.or(firstName, lastName);
+
+        cr.add(or);
+
+        List results = cr.list();
+
+
+        session.close();
+
+        return results;
     }
 }

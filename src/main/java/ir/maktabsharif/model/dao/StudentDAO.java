@@ -8,4 +8,6 @@ import java.util.List;
 public interface StudentDAO extends BaseDAO<Student> {
 
     List<Student> searchStudentsByName(String name);
+
+    List<Student> searchStudentsByNameCriteria(String name);
 }

@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 /**
  * CRUD Interface
- *
+ * @author Mohammad hashemi
  * @param <E>
  */
 public interface BaseDAO<E extends Serializable> {
