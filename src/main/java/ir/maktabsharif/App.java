@@ -8,12 +8,13 @@ import ir.maktabsharif.model.dao.TeacherDAO;
 import ir.maktabsharif.model.dao.TeacherDAOImpl;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
-
 import java.time.LocalDate;
 
 /**
- * Hello world!
+ * This program is about to learn hibernate using maven.
+ * I implemented CRUD command and some more queries(HQL & Criteria).
  *
+ * @author Mohammad hashemi
  */
 public class App 
 {
@@ -53,10 +54,12 @@ public class App
 //        studentDAO.create(student4);
 //        studentDAO.create(student5);
 
+        /**
+         * Each query was tested their work correctly
+         */
         //teacherDAO.deleteByTeacherCode(111114L);
 
         //System.out.println(teacherDAO.maxAndMinSalaryOfTeachers());
-        System.out.println(teacherDAO.maxAndMinSalaryOfTeachersCriteria());
 
         //System.out.println(teacherDAO.youngestAndOldestTeachers());
 

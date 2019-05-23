@@ -12,7 +12,9 @@ import org.hibernate.criterion.Restrictions;
 
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * @author Mohammad hashemi
+ */
 public class StudentDAOImpl extends BaseDAOImpl<Student> implements StudentDAO {
 
     public StudentDAOImpl(SessionFactory factory) {

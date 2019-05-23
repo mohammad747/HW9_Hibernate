@@ -11,7 +11,9 @@ import org.hibernate.criterion.Projections;
 
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * @author Mohammad hashemi
+ */
 public class TeacherDAOImpl extends BaseDAOImpl<Teacher> implements TeacherDAO {
 
     public TeacherDAOImpl(SessionFactory factory) {
@@ -53,19 +55,6 @@ public class TeacherDAOImpl extends BaseDAOImpl<Teacher> implements TeacherDAO {
         return maxMin;
     }
 
-    @Override
-    public List<Teacher> maxAndMinSalaryOfTeachersCriteria() {
-        Session session = factory.openSession();
-
-        Criteria cr = session.createCriteria(Teacher.class);
-
-        cr.setProjection(Projections.max("salary"));
-        cr.setProjection(Projections.min("salary"));
-
-        List result = cr.list();
-
-        return result;
-    }
 
     @Override
     public List<Teacher> youngestAndOldestTeachers() {
